@@ -12,6 +12,8 @@ import {
   CardHeader,
   CardTitle,
 } from "@/components/card"
+import { fontSerif } from "@/lib/fonts"
+import { cn } from "@/lib/utils"
 
 export default function Home() {
   return (
@@ -33,11 +35,17 @@ export default function Home() {
             )}
             <CardHeader>
               <CardTitle className="m-0">
-                <Link href={post.slug} className="no-underline">
+                <Link
+                  href={post.slug}
+                  className={cn(
+                    fontSerif.className,
+                    "text-3xl font-normal no-underline"
+                  )}
+                >
                   {post.title}
                 </Link>
               </CardTitle>
-              <CardDescription className="space-x-1 text-xs">
+              <CardDescription className="space-x-1 text-sm">
                 <span>{format(parseISO(post.date), "MMMM dd, yyyy")}</span>
                 <span>{` • `}</span>
                 <span>{post.readingTime.text}</span>

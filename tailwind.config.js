@@ -3,9 +3,9 @@ const { fontFamily } = require("tailwindcss/defaultTheme")
 /** @type {import('tailwindcss').Config} */
 module.exports = {
   content: [
-    './pages/**/*.{js,ts,jsx,tsx,mdx}',
-    './components/**/*.{js,ts,jsx,tsx,mdx}',
-    './app/**/*.{js,ts,jsx,tsx,mdx}',
+    "./pages/**/*.{js,ts,jsx,tsx,mdx}",
+    "./components/**/*.{js,ts,jsx,tsx,mdx}",
+    "./app/**/*.{js,ts,jsx,tsx,mdx}",
   ],
   darkMode: ["class"],
   theme: {
@@ -15,8 +15,25 @@ module.exports = {
     },
     extend: {
       fontFamily: {
-        sans: ['var(--font-sans)'],
-        heading: ["var(--font-heading)", ...fontFamily.sans],
+        sans: ["var(--font-sans)"],
+        special: ["'Gloock'"],
+      },
+      typography: {
+        DEFAULT: {
+          css: {
+            code: {
+              background: "hsl(var(--muted))",
+              padding: "0.25rem",
+              borderRadius: "4px",
+            },
+            "code::before": {
+              content: '""',
+            },
+            "code::after": {
+              content: '""',
+            },
+          },
+        },
       },
       colors: {
         border: "hsl(var(--border))",

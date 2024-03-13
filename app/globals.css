@@ -11,6 +11,7 @@
 @layer base {
   :root {
     --font-sans: Inter;
+    --font-serif: "Gloock";
 
     --background: 0 0% 100%;
     --foreground: 222.2 47.4% 11.2%;
@@ -97,7 +98,7 @@
 /* rehype-code-titles */
 
 .rehype-code-title {
-  @apply px-5 py-3 font-mono text-sm font-bold text-gray-800 bg-gray-200 rounded-t-lg dark:text-gray-200 dark:bg-gray-900;
+  @apply rounded-t-lg bg-gray-200 px-5 py-3 font-mono text-sm font-bold text-gray-800 dark:bg-gray-900 dark:text-gray-200;
 }
 
 .rehype-code-title + pre {
@@ -107,7 +108,7 @@
 /* rehype-autolink-headings */
 
 .anchor {
-  @apply absolute invisible -ml-5 cursor-pointer w-5;
+  @apply invisible absolute -ml-5 w-5 cursor-pointer;
 }
 
 .anchor:hover {
@@ -119,7 +120,7 @@
 }
 
 *:hover > .anchor {
-  @apply font-bold visible no-underline;
+  @apply visible font-bold no-underline;
 }
 
 .anchor:after {

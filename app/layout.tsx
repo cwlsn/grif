@@ -3,12 +3,11 @@ import { Header } from "@/components/header"
 import { ThemeProvider } from "@/components/theme-provider"
 
 import "./globals.css"
-import { fontSans } from "@/lib/fonts"
+import { fontSans, fontSerif } from "@/lib/fonts"
 import { cn } from "@/lib/utils"
 
-const title = "Next Dev Blog"
-const description =
-  "A Next.js markdown blog for developers using the new App Router."
+const title = "Connor Wilson"
+const description = "Personal website of Connor Wilson, Engineering Leader"
 export const metadata = {
   metadataBase: process.env.NEXT_PUBLIC_SITE_URL,
   title: {
@@ -16,22 +15,14 @@ export const metadata = {
     template: `%s | ${title}`,
   },
   description,
-  keywords: [
-    "Next.js",
-    "JavaScript",
-    "TypeScript",
-    "React",
-    "TailwindCSS",
-    "contentlayer",
-    "App Router",
-  ],
+  keywords: ["Connor Wilson"],
   authors: [
     {
-      name: "stevenspads",
-      url: "https://github.com/stevenspads",
+      name: "cwlsn",
+      url: "https://github.com/cwlsn",
     },
   ],
-  creator: "stevenspads",
+  creator: "cwlsn",
   themeColor: [
     { media: "(prefers-color-scheme: light)", color: "white" },
     { media: "(prefers-color-scheme: dark)", color: "black" },
@@ -49,7 +40,7 @@ export const metadata = {
     title,
     description,
     images: [`${process.env.NEXT_PUBLIC_SITE_URL}/og-image.jpg`],
-    creator: "@stevenspads",
+    creator: "@_cwlsn",
   },
   icons: {
     icon: "/favicon.ico",
@@ -66,11 +57,12 @@ export default function RootLayout({ children }: RootLayoutProps) {
       <body
         className={cn(
           "min-h-screen bg-background font-sans antialiased",
-          fontSans.variable
+          fontSans.variable,
+          fontSerif.variable
         )}
       >
         <ThemeProvider attribute="class" defaultTheme="system" enableSystem>
-          <div className="mx-auto max-w-2xl px-4 py-10">
+          <div className="mx-auto max-w-3xl px-4 py-10">
             <Header />
             <main>{children}</main>
             <Footer />

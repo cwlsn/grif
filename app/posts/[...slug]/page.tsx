@@ -7,6 +7,8 @@ import { format, parseISO } from "date-fns"
 
 import { Mdx } from "@/components/mdx-components"
 import { SharePost } from "@/components/share-post"
+import { fontSerif } from "@/lib/fonts"
+import { cn } from "@/lib/utils"
 
 interface PostProps {
   params: {
@@ -54,7 +56,7 @@ export default async function PostPage({ params }: PostProps) {
   }
 
   return (
-    <article className="prose dark:prose-invert">
+    <article className="prose prose-lg prose-slate dark:prose-invert">
       {post.image && (
         <div className="relative mb-12 h-[345px] w-full">
           <Image
@@ -69,7 +71,9 @@ export default async function PostPage({ params }: PostProps) {
       )}
 
       <header>
-        <h1 className="mb-2">{post.title}</h1>
+        <h1 className={cn(fontSerif.className, "mb-2 font-normal")}>
+          {post.title}
+        </h1>
         {post.description && (
           <p className="mb-6 mt-0 text-xl text-gray-700 dark:text-gray-200">
             {post.description}
